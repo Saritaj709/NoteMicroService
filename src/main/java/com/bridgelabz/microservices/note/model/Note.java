@@ -1,5 +1,6 @@
 package com.bridgelabz.microservices.note.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,8 +24,9 @@ public class Note {
 	private boolean trashed;
 	private boolean archieve;
 	private boolean pin;
-	private List<Label> Labels;
-	private List<UrlMetaData> metaData;  
+	private List<Label> Labels=new ArrayList<>();
+	private List<UrlMetaData> metaData; 
+	private List<String> image=new ArrayList<>();
 
 	public Note() {
 		super();
@@ -136,12 +138,20 @@ public class Note {
 		this.metaData = metaData;
 	}
 
+	public List<String> getImage() {
+		return image;
+	}
+
+	public void setImage(List<String> image) {
+		this.image = image;
+	}
+
 	@Override
 	public String toString() {
 		return "Note [noteId=" + noteId + ", title=" + title + ", description=" + description + ", createdAt="
 				+ createdAt + ", userId=" + userId + ", lastModifiedAt=" + lastModifiedAt + ", color=" + color
 				+ ", reminder=" + reminder + ", trashed=" + trashed + ", archieve=" + archieve + ", pin=" + pin
-				+ ", Labels=" + Labels + ", metaData=" + metaData + "]";
+				+ ", Labels=" + Labels + ", metaData=" + metaData + ", image=" + image + "]";
 	}
 
 }
